@@ -2,7 +2,7 @@ module SessionsHelper
 
 	def sign_in (client)
 		cookies.permanent[:remember_token] = client.remember_token
-		current_client = client
+		self.current_client = client
 	end
 
 	def signed_in?
@@ -19,7 +19,7 @@ module SessionsHelper
 	end
 
 	def sign_out
-		current_client = nil
+		self.current_client = nil
 		cookies.delete(:remember_token)
 	end
 end
