@@ -15,6 +15,7 @@ describe Client do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }  
   it { should respond_to(:authenticate) }
 
 
@@ -105,4 +106,10 @@ describe Client do
  			specify { client_for_invalid_password.should be false }
  		end
  	end
+
+ 	describe "remember token" do
+ 		before { @client.save } 
+ 		its(:remember_token) { should_not be_blank }
+ 	end
+
 end
