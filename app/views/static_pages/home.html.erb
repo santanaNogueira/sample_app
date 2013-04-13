@@ -1,17 +1,39 @@
 <div class="center hero_unit">
-	<h1>Bem vindo ao meu Twitter</h1>
-		<p>
-			this is the home page for the twitter app
+<html>
+<head>
+<style>
+body
+{
+	background-image:url('assets/sala.jpg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position: top-center;
+	background-size: 100% 100%;
+}
 
-		</p>
+</style>
+</head>
+	<body>
+		<% if signed_in? %>
+			<h1>Ainda aqui?</h1>
+		<% else %>
+		<h1>Bem vindo ao Primeiro Direito</h1>
+
+			<%= link_to "Regista-te!", signup_path, class:"btn btn-large btn-inverse" %><!-- btn=button -->
+			
+			<div>
+				<br><br>
+	
+			</div>
+		<% end %>
 
 
-		<%= link_to "Sign up now!", signup_path, class:"btn btn-large btn-primary" %><!-- btn=button -->
-		
-		<div>
-			<%= link_to image_tag("twitter.png", alt:"Rails"),'https://twitter.com/' %>
-		</div>
 
+
+
+	</body>
+</html>
 </div>
+
 
 

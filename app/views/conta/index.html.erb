@@ -1,0 +1,33 @@
+<%provide(:title, 'Contas')%>
+<h1>Lista das Contas</h1>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Nome</th>
+    <th>Data da Chegada</th>
+    <th>Data a Pagar</th>
+    <th>Valor Total a Pagar</th>
+    <th>Valor Individual a Pagar</th>
+    <th></th>
+  </tr>
+
+<% @conta.each do |contum| %>
+  <tr>
+    <td><%= contum.nome %></td>
+    <td><%= contum.data_chegada %></td>
+    <td><%= contum.data_pagar %></td>
+    <td><%= contum.valor_pagar%>€</td>
+    <td><%= contum.valor_d_cada%>€</td>
+    <td><%= link_to 'Enviar Email', { :controller => :conta,
+           :action => :send_email, :id => contum }, :class => 'btn btn-primary btn-mini' %></td>
+    <td><%= link_to 'Editar', edit_contum_path(contum), :class => 'btn btn-mini' %></td>
+
+    <td><%= link_to 'Eleminar', contum, :class => 'btn btn-danger btn-mini', method: :delete, data: { confirm: 'Tens a certeza?' }%></td>
+  </tr>
+<% end %>
+</table>
+
+<br /> 
+
+<%= link_to 'Nova Conta', new_contum_path, :class => 'btn btn-inverse' %>

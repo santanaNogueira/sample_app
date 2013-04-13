@@ -1,0 +1,44 @@
+<%provide(:title, 'Nova Conta')%>
+<h1>Nova Conta</h1>
+
+
+
+<dic class="row">
+	<dic class="span6 offset3">
+
+		<%= form_for(@contum) do |f| %>
+
+			<% if @contum.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@contum.errors.count, "error") %> prohibited this contum from being saved:</h2>
+
+		      <ul>
+		      <% @contum.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+			<%= f.label :nome %>
+   			<%= f.text_field :nome %>
+
+			 <%= f.label :data_chegada, "Data da Chegada"  %>
+    		<%= f.date_select :data_chegada %>
+
+			<%= f.label :data_pagar, "Data a Pagar" %>
+    		<%= f.date_select :data_pagar %>
+
+    		<%= f.label :valor_pagar, "Valor Total a Pagar" %>
+    		<%= f.text_field :valor_pagar %>
+    		
+
+			<%= f.submit "Criar conta!", class: "btn btn-large btn-inverse"%>
+			<br><br>
+			<%= link_to 'Back', conta_path, class: "btn btn-danger" %>
+
+		<% end %>
+
+	</div>
+</div>
+

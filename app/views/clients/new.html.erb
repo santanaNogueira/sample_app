@@ -1,5 +1,5 @@
 <%provide(:title, 'Sign up')%>
-<h1>Sign up</h1>
+<h1>Regista-te</h1>
 
 
 <dic class="row">
@@ -7,7 +7,7 @@
 
 		<%= form_for(@client) do |f| %>
 			<%= render 'shared/error_messages' %>
-			<%= f.label :name %>
+			<%= f.label :name, "Nome" %>
 			<%= f.text_field :name  %>
 
 			<%= f.label :email %>
@@ -16,10 +16,10 @@
 			<%= f.label :password %>
 			<%= f.password_field :password %>
 
-			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.label :password_confirmation, "Confirmação" %>
 			<%= f.password_field :password_confirmation %>
 
-			<%= f.submit "Create My Account", class: "btn btn-large btn-primary"%>
+			<%= f.submit "Cria aqui a tua conta!", class: "btn btn-large btn-inverse"%>
 			
 		<% end %>
 

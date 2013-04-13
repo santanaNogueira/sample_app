@@ -20,7 +20,8 @@ class ClientsController < ApplicationController
   	@client = Client.new(params[:client])
   	if @client.save
       sign_in @client
-  		flash[:success] = "Bem Vindo ao Meu Twitter!"
+      ClientMailer.registration_confirmation(@client)
+  		flash[:success] = "Bem Vindo ao Primeiro Direito!"
   		redirect_to @client 
   	else
   		render 'new'
@@ -35,7 +36,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     if @client.update_attributes(params[:client])
         sign_in @client
-        flash[:success] = "Perfil actualizado!"
+        flash[:success] = "Quarto Arrumado!"
         redirect_to @client 
     else
       render 'edit'
@@ -55,7 +56,7 @@ class ClientsController < ApplicationController
       unless  signed_in?
         store_location
         # flash[:notice] = "Por favor, Sign in!" fazer notice: "Por favor, Sign in!" é a mesma coisa
-        redirect_to signin_path, notice: "Por favor, Sign in!" 
+        redirect_to signin_path, notice: "Por favor, entra em casa!" 
       end
         
     end

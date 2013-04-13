@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+
+			<h1>
+			  <b>Nome:</b>
+			  <%= @contum.nome %>
+			</h1>
+
+			<h1>
+			  <b>Data da Chegada:</b>
+			  <%= @contum.data_chegada %>
+			</h1>
+
+			<h1>
+			  <b>Data a Pagar:</b>
+			  <%= @contum.data_pagar %>
+			</h1>
+
+			<h1>
+			  <b>Valor Total a Pagar:</b>
+			  <%= @contum.valor_pagar %>
+			</h1>
+
+			<%= link_to 'Editar', edit_contum_path(@contum), class: "btn btn-mini btn-primary" %> |
+			<%= link_to 'Voltar', conta_path, class: "btn btn-mini btn-danger" %>
+
+		</section>
+	</aside>
+</div>

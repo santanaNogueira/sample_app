@@ -1,0 +1,29 @@
+<%provide(:title, 'Edit user')%>
+<h1>Arruma o teu quarto</h1>
+
+<dic class="row">
+	<dic class="span6 offset3">
+
+		<%= form_for(@client) do |f| %>
+			<%= render 'shared/error_messages' %>
+			<%= f.label :name, "Nome" %>
+			<%= f.text_field :name  %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Confirma a Password" %>
+			<%= f.password_field :password_confirmation %>
+
+			<%= f.submit "Guardar Alterações", class: "btn btn-large btn-inverse"%>
+			
+		<% end %>
+
+		<%= gravatar_for @client%>
+		<a href="http://gravatar.com/emails" target="_blank"> change</a>
+
+	</div>
+</div>

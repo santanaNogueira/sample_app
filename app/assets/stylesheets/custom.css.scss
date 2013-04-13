@@ -2,6 +2,8 @@
 
 $lightGray: #999;
 
+
+
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -16,8 +18,8 @@ html {
 
 body {
 	padding-top: 60px;
-
 }
+
 section {
 	overflow: auto;
 }
@@ -30,11 +32,25 @@ textarea {
 .center {
 	text-align: center;
 
+
 	h1 {
 		margin-bottom: 10px;
+		letter-spacing: 10px;
+		line-height: 6.7em;
+		color: #000000;
+		background-color: rgba(74,9,9,0.6);
 	}
-}
 
+	p{
+		font-size: 1.5em;
+		line-height: 1.7em;
+		background-color: #E6E6E6;
+		color: #000000;
+		background-color: rgba(74,92,97,0.6);
+	}
+
+
+}
 /*typography*/
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,7 +97,7 @@ p {
 	}
 }
 
-/*footer*/
+/*footer*/  
 
 footer {
 	margin-top: 45px;
@@ -98,7 +114,8 @@ footer {
    }
 
 	small {
-		float: left;
+		float: center;
+		font-size: 1.5em;
 	}
 
 	ul {

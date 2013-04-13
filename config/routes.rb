@@ -1,5 +1,8 @@
 SampleApp::Application.routes.draw do
 
+  resources :conta
+
+
   resources :clients
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -8,6 +11,10 @@ SampleApp::Application.routes.draw do
   match '/signup',    to: 'clients#new'
   match '/signin',    to: 'sessions#new'
   match '/signout',   to: 'sessions#destroy', via: :delete
+
+  match 'conta',     to: 'conta#new'
+
+  match 'send_email', to: 'conta#send_email'
 
   match '/help',     to: 'static_pages#help'
   match '/contact',  to: 'static_pages#contact'

@@ -1,0 +1,30 @@
+<%provide(:title, 'Form')%>
+<%= form_for(@contum) do |f| %>
+  <% if @contum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contum.errors.count, "error") %> prohibited this contum from being saved:</h2>
+
+      <ul>
+      <% @contum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :data_chegada %><br />
+    <%= f.datetime_select :data_chegada %>
+  </div>
+  <div class="field">
+    <%= f.label :data_pagar %><br />
+    <%= f.datetime_select :data_pagar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

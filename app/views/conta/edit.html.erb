@@ -1,0 +1,31 @@
+<%provide(:title, 'Edita Conta')%>
+<h1>Edita Conta</h1>
+
+<dic class="row">
+	<dic class="span6 offset3">
+
+		<%= form_for(@contum) do |f| %>
+
+			<%= f.label :nome %>
+   			<%= f.text_field :nome %>
+
+			 <%= f.label :data_chegada, "Data da Chegada"%>
+    		<%= f.date_select :data_chegada %>
+
+			<%= f.label :data_pagar, "Data a Pagar"%>
+    		<%= f.date_select :data_pagar %>
+
+    		<%= f.label :valor_pagar, "Valor Total a Pagar" %>
+    		<%= f.text_field :valor_pagar %>
+
+			<%= f.submit "Guardar Alterações", class: "btn btn-large btn-inverse"%>
+			
+		<% end %>
+
+	
+		<%= link_to 'Ver', @contum, class: "btn btn-mini btn-primary" %> |
+		<%= link_to 'Voltar', conta_path, class: "btn btn-mini btn-danger" %>
+	</div>
+</div>
+
+

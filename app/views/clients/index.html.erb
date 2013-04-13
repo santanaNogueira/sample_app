@@ -1,0 +1,17 @@
+<%provide(:title, 'Todos os Utilizadores')%>
+<h1>Todos os Habitantes</h1>
+
+<%= will_paginate %>
+
+<ul class="clients">
+
+	<%= render @clients %>
+	
+<!-- 	é o mesmo q fzr isto: -->
+	<%# @clients.each do |client| %>
+		<%#= render 'client', client: client %>
+	<%# end %>
+
+</ul>
+
+<%= will_paginate %>

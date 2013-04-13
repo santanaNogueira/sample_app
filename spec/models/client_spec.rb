@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Client do
 
   before do
-    @client = Client.new(name: "Example Client", email: "client@.com",
+    @client = Client.new(name: "Example Client", email: "client@example.com",
   						 password: "foobar", password_confirmation: "foobar")
   end
 
